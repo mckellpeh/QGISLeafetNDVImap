@@ -2,6 +2,15 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import rasterio
 from rasterio.transform import rowcol
+import os
+from firebase_admin import credentials, initialize_app
+
+# Get the key file path from the environment variable
+cred_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+
+# Initialize Firebase
+cred = credentials.Certificate(cred_path)
+initialize_app(cred)
 
 # Initialize Flask app
 app = Flask(__name__)
