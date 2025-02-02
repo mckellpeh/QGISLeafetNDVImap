@@ -298,7 +298,7 @@
                     console.log(`Clicked at Latitude: ${lat}, Longitude: ${lng}`);
 
                     // Fetch NDVI Value from the API
-                    fetch(`http://127.0.0.1:5000/get_ndvi?lat=${lat}&lon=${lng}`)
+                    fetch(`https://qgisleafetndvimaprender.onrender.com/get_ndvi?lat=${lat}&lon=${lng}`)
                         .then(response => response.json())
                         .then(data => {
                             let ndviValue = "No Data"; // Default value if API fails
