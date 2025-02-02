@@ -1,0 +1,46 @@
+/* Layout and body styling */
+body {
+    display: flex;
+    margin: 0;
+}
+
+/* Side panel styling */
+#side-panel {
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #f9f9f9;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#side-panel h3 {
+    margin: 0 0 10px;
+}
+
+#side-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+#side-panel ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #fff;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+#side-panel ul li:hover {
+    background: #eee;
+}
+
+/* Map container styling */
+#map {
+    flex-grow: 1;
+    height: 100vh;
+}
+        
