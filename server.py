@@ -30,10 +30,10 @@ def get_ndvi(lat, lon):
             ndvi_value = dataset.read(1)[row, col]  # Band 1 (NDVI data)
             
             # Convert 0-255 range to -1 to 1 range
-            if ndvi_value == 255:  # Handle NoData values
-                return None
-
-            ndvi_value = ((ndvi_value / 127.5) - 1) * -1  # Convert 0-255 range back to -1 to 1 AND invert # Scale to -1 to 1
+            if ndvi_value == dataset.nodata:
+                return None  # or return a special value indicating missing data
+        
+            return ndvi_value  # Already in -1 to 1 range
 
             return float(ndvi_value)  # Convert to normal number
     except Exception as e:
