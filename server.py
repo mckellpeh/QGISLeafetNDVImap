@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app)  # Allow requests from JavaScript
 
 # Load the NDVI raster file (Update this path to match your file location)
-NDVI_RASTER_PATH = "data/NDVI layer generated image 2.tif"
+NDVI_RASTER_PATH = "data/NDVI layer generated image final.tif"
 
 # Function to get NDVI value at a specific lat/lon
 def get_ndvi(lat, lon):
