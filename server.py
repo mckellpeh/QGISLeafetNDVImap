@@ -29,7 +29,7 @@ def get_ndvi(lat, lon):
             # Read NDVI value at that pixel
             ndvi_value = dataset.read(1)[row, col]  # Band 1 (NDVI data)
             
-            # Convert 0-255 range to -1 to 1 range
+            # Handle NoData values
             if ndvi_value == dataset.nodata:
                 return None  # or return a special value indicating missing data
         
