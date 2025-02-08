@@ -226,7 +226,14 @@
                         // Create a marker and add it to the map
                         const marker = L.marker([lat, lng])
                             .addTo(map)
-                            .bindPopup(`<b>Tree Name:</b> ${tree.COMMON_NM || "Unknown"}<br><b>Species:</b> ${tree.SPCS_NM || "Unknown"}`);
+                            .bindPopup(`
+				<b>ID:</b> ${tree.Public_treeid || "Unknown"}<br>
+				<b>Tree Name:</b> ${tree.COMMON_NM || "Unknown"}<br>
+				<b>Species:</b> ${tree.SPCS_NM || "Unknown"}<br>
+				<b>NDVI:</b> ${tree.NDVI_value || "Unknown"}<br>
+				<b>CO2 Sequestered: </b> ${tree.CO2_Sequestered_NDVI_Adjusted || "Unknown"}<br>
+				
+			    `);
                         
                             // Store the marker in the dictionary using a unique key (e.g., tree name or index)
                         const key = tree.COMMON_NM || `Tree ${index}`;
